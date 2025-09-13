@@ -22,6 +22,7 @@ fun PrintResult(result: Double){
             .padding(8.dp),
         shape = RoundedCornerShape(8.dp),
         border = BorderStroke(1.dp, Color.Gray),
+        onClick = {}
     ) {
         Box(
             modifier = Modifier
@@ -32,7 +33,7 @@ fun PrintResult(result: Double){
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Text("Результат:")
+                Text("Получить результат:")
                 Text(
                     text = "$result",
                     color = Color.Black,
