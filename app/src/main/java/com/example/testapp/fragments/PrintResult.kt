@@ -14,15 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.testapp.viewModels.CalcViewState
 
 @Composable
-fun PrintResult(result: Double){
+fun PrintResult(result: Double, onRequestCalculation: () -> Unit){
     Card(
         modifier = Modifier
             .padding(8.dp),
         shape = RoundedCornerShape(8.dp),
         border = BorderStroke(1.dp, Color.Gray),
-        onClick = {}
+        onClick = onRequestCalculation
     ) {
         Box(
             modifier = Modifier

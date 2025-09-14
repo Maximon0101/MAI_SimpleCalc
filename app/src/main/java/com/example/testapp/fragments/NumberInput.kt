@@ -1,42 +1,26 @@
 package com.example.testapp.fragments
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
-fun NumberInput1() {
-    var text by remember { mutableStateOf("") }
-    var number by remember { mutableStateOf(0) }
+fun NumberInput(number: Int, onNumberChange: (Int) -> Unit) {
+    val keyboardOption = remember { KeyboardOptions(keyboardType = KeyboardType.Number) }
 
     Column {
         OutlinedTextField(
-            value = text,
+            value = number.toString(),
             onValueChange = { newText ->
-                text = newText
-                number = newText.toIntOrNull() ?: 0 // преобразуем строку в число
+                if (newText.isEmpty()) { onNumberChange(0) }
+                val newNumber = newText.toIntOrNull() ?: return@OutlinedTextField // преобразуем строку в число
+                onNumberChange(newNumber)
             },
             label = { Text("Введите число") },
-        )
-
-        Text(text = "Вы ввели число: $number")
-    }
-}
-
-@Composable
-fun NumberInput2() {
-    var text by remember { mutableStateOf("") }
-    var number by remember { mutableStateOf(0) }
-
-    Column {
-        OutlinedTextField(
-            value = text,
-            onValueChange = { newText ->
-                text = newText
-                number = newText.toIntOrNull() ?: 0 // преобразуем строку в число
-            },
-            label = { Text("Введите число") },
+            keyboardOptions = keyboardOption
         )
 
         Text(text = "Вы ввели число: $number")
