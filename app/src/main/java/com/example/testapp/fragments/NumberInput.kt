@@ -6,7 +6,26 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 
 @Composable
-fun NumberInputExample() {
+fun NumberInput1() {
+    var text by remember { mutableStateOf("") }
+    var number by remember { mutableStateOf(0) }
+
+    Column {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { newText ->
+                text = newText
+                number = newText.toIntOrNull() ?: 0 // преобразуем строку в число
+            },
+            label = { Text("Введите число") },
+        )
+
+        Text(text = "Вы ввели число: $number")
+    }
+}
+
+@Composable
+fun NumberInput2() {
     var text by remember { mutableStateOf("") }
     var number by remember { mutableStateOf(0) }
 

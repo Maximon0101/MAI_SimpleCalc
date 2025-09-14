@@ -14,15 +14,15 @@ class CalcStateStorageRepository : CalcStateRepository {
         TODO("Not yet implemented")
     }
 
-    override fun setFirstNumber() {
+    override fun setFirstNumber(number: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun setSecondNumber() {
+    override fun setSecondNumber(number: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun setAction() {
+    override fun setAction(action: CalcActions) {
         TODO("Not yet implemented")
     }
 

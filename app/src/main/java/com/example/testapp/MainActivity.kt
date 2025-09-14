@@ -15,7 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.testapp.fragments.ChooseActionMenu
-import com.example.testapp.fragments.NumberInputExample
+import com.example.testapp.fragments.NumberInput1
+import com.example.testapp.fragments.NumberInput2
 import com.example.testapp.fragments.PrintResult
 
 class MainActivity : ComponentActivity() {
@@ -37,9 +38,9 @@ class MainActivity : ComponentActivity() {
                         painter = painterResource(id = R.drawable.aboba),
                         contentDescription = null
                     )
-                    NumberInputExample()
+                    NumberInput1()
                     ChooseActionMenu()
-                    NumberInputExample()
+                    NumberInput2()
                     PrintResult(0.1)
                 }
             }
