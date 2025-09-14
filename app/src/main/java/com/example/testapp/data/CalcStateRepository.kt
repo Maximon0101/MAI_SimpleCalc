@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface CalcStateRepository {
     val stateFlow: StateFlow<CalcState>
-    fun getCalcState(): CalcState
+    fun getLastCalcState(): CalcState
     fun setFirstNumber()
     fun setSecondNumber()
     fun setAction()

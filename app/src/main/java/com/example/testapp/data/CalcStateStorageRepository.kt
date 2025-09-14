@@ -10,7 +10,7 @@ class CalcStateStorageRepository : CalcStateRepository {
 
     override val stateFlow: StateFlow<CalcState> = _stateFlow
 
-    override fun getCalcState(): CalcState {
+    override fun getLastCalcState(): CalcState {
         TODO("Not yet implemented")
     }
 
