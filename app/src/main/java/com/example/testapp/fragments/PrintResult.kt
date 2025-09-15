@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 import com.example.testapp.viewModels.CalcViewState
 
 @Composable
-fun PrintResult(result: Double, onRequestCalculation: () -> Unit){
+fun PrintResult(result: Double?, onRequestCalculation: () -> Unit){
     Card(
         modifier = Modifier
             .padding(8.dp),
@@ -35,11 +35,20 @@ fun PrintResult(result: Double, onRequestCalculation: () -> Unit){
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text("Получить результат:")
-                Text(
-                    text = "$result",
-                    color = Color.Black,
-                    fontSize = 38.sp,
-                )
+                if (result != null) {
+                    Text(
+                        text = "$result",
+                        color = Color.Black,
+                        fontSize = 38.sp,
+                    )
+                }
+                else {
+                    Text(
+                        text = "Dude",
+                        color = Color.Black,
+                        fontSize = 38.sp,
+                    )
+                }
             }
         }
     }

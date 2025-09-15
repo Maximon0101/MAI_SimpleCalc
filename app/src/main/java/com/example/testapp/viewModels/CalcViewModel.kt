@@ -37,14 +37,16 @@ class CalcViewModel : ViewModel() {
         _stateFlow.value = newState
     }
 
-    suspend fun calculateResult(): Double {
+    suspend fun calculateResult(): Double? {
         val currentState = _stateFlow.value
         return (when (currentState.action) {
-            Plus -> currentState.firstNumber + currentState.secondNumber
-            Minus -> currentState.firstNumber - currentState.secondNumber
-            Multiply -> currentState.firstNumber * currentState.secondNumber
-            Divide -> currentState.firstNumber / currentState.secondNumber //TODO: fix divide by 0
-        }).toDouble()
+            Plus -> (currentState.firstNumber + currentState.secondNumber).toDouble()
+            Minus -> (currentState.firstNumber - currentState.secondNumber).toDouble()
+            Multiply -> (currentState.firstNumber * currentState.secondNumber).toDouble()
+            Divide -> if (currentState.secondNumber == 0) {
+                return null
+            } else return (currentState.firstNumber / currentState.secondNumber).toDouble() //TODO: test divide by 0
+        })
     }
 
     fun requestRecalculation() {

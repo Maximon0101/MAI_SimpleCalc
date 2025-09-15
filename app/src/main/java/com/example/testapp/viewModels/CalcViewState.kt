@@ -6,5 +6,5 @@ data class CalcViewState (
     val firstNumber: Int,
     val secondNumber: Int,
     val action: CalcActions,
-    val result: Double,
+    val result: Double?,
 )
