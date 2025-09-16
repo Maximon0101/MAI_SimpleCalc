@@ -15,7 +15,9 @@ fun NumberInput(number: Int, onNumberChange: (Int) -> Unit) {
         OutlinedTextField(
             value = number.toString(),
             onValueChange = { newText ->
-                if (newText.isEmpty()) { onNumberChange(0) }
+                if (newText.isEmpty()) {
+                    onNumberChange(0)
+                }
                 val newNumber = newText.toIntOrNull() ?: return@OutlinedTextField // преобразуем строку в число
                 onNumberChange(newNumber)
             },

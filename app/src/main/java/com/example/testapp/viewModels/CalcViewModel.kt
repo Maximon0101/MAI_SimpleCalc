@@ -4,8 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testapp.models.CalcActions
 import com.example.testapp.models.CalcActions.*
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -16,7 +14,7 @@ class CalcViewModel : ViewModel() {
         CalcViewState(
             0,
             0,
-            CalcActions.Plus,
+            Plus,
             0.0
         )
     )
@@ -45,7 +43,7 @@ class CalcViewModel : ViewModel() {
             Multiply -> (currentState.firstNumber * currentState.secondNumber).toDouble()
             Divide -> if (currentState.secondNumber == 0) {
                 return null
-            } else return (currentState.firstNumber / currentState.secondNumber).toDouble() //TODO: test divide by 0
+            } else return (currentState.firstNumber / currentState.secondNumber).toDouble()
         })
     }
 
