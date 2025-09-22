@@ -50,7 +50,10 @@ fun MinimalDropdownMenu(onActionChange: (CalcActions) -> Unit  ) {
                     modifier = Modifier,
                     contentDescription = null,) },
                 text = { Text("") },
-                onClick = { onActionChange(CalcActions.Plus) }
+                onClick = {
+                    onActionChange(CalcActions.Plus)
+                    expanded = false
+                }
             )
             DropdownMenuItem(
                 leadingIcon = { Icon(
@@ -59,7 +62,10 @@ fun MinimalDropdownMenu(onActionChange: (CalcActions) -> Unit  ) {
                     contentDescription = null,
                 ) },
                 text = { Text("") },
-                onClick = { onActionChange(CalcActions.Minus) }
+                onClick = {
+                    onActionChange(CalcActions.Minus)
+                    expanded = false
+                }
             )
             DropdownMenuItem(
                 leadingIcon = { Icon(
@@ -67,7 +73,10 @@ fun MinimalDropdownMenu(onActionChange: (CalcActions) -> Unit  ) {
                     modifier = Modifier,
                     contentDescription = null,) },
                 text = { Text("") },
-                onClick = { onActionChange(CalcActions.Multiply) }
+                onClick = {
+                    onActionChange(CalcActions.Multiply)
+                    expanded = false
+                }
             )
             DropdownMenuItem(
                 leadingIcon = { Icon(
@@ -76,7 +85,10 @@ fun MinimalDropdownMenu(onActionChange: (CalcActions) -> Unit  ) {
                     contentDescription = null,
                 ) },
                 text = { Text("") },
-                onClick = { onActionChange(CalcActions.Divide) }
+                onClick = {
+                    onActionChange(CalcActions.Divide)
+                    expanded = false
+                }
             )
         }
     }
